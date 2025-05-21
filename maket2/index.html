@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="cart-icon" onclick="openCart()">
+        <img src="./img/shopping-basket.png" alt="Корзина">
+    </div>
+    
+    <div class="container">
+        <div class="catalog" id="catalog">
+        </div>
+
+        <div class="modal-overlay" id="cart-modal">
+          <div class="cart-modal">
+            <div class="korzina">
+              <div class="order-form">
+                <h1>Оформить заказ</h1>
+                <p>Введите свои контактные данные, и наш менеджер свяжется с Вами в течении 1 часа.</p>
+                
+                <div class="form-group">
+                    <div class="input-line">
+                        <input type="text" value="Макс">
+                        <span class="line"></span>
+                    </div>
+                    <label>ФИО</label>
+                </div>
+                <div class="form-group">
+                    <div class="input-line">
+                        <input type="email" value="example@gmail.com">
+                        <span class="line"></span>
+                    </div>
+                    <label>Email</label>
+                </div>
+                <div class="form-group">
+                    <div class="input-line">
+                        <input type="tel" value="+380090099000">
+                        <span class="line"></span>
+                    </div>
+                    <label>Телефон</label>
+                </div>
+                
+                <div class="separator"></div>
+                
+                <button class="checkout-btn">Заказать</button>
+                <p class="privacy-text">Натискаем: "Платводаги замедлены!". Вы даете этому на обробку Ваших персональных данных.</p>
+              </div>
+              <div class="ks">
+                <div class="cart-header">
+                    <h1>Корзина</h1>
+                    <button class="close-btn" id="close-cart"><img src="./img/close-modak.png" alt="Закрыть"></button>
+                </div>
+                
+                <div class="cart-items" id="cart-items">
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="./img/klipartz 3.png" alt="EL003 Eleven Checkpoint-Friendly">
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">EL003 Eleven Checkpoint-Friendly</div>
+                            <div class="cart-item-color">Цвет <img src="./img/Ellipse 4.png" alt="Color"></div>
+                            <div class="cart-item-size">Размер <span>XS</span></div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" onclick="changeQuantity(1, -1)">-</button>
+                            <span class="quantity-value">5</span>
+                            <button class="quantity-btn plus" onclick="changeQuantity(1, 1)">+</button>
+                            <div class="min-quantity">min</div>
+                        </div>
+                        <div class="cart-item-price">$76.43</div>
+                        <button class="remove-btn"><img src="./img/close.png" alt="Удалить"></button>
+                    </div>
+                    
+                    <div class="item-separator"></div>
+                    
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="./img/klipartz 3.png" alt="EL003 Eleven Checkpoint-Friendly">
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">EL003 Eleven Checkpoint-Friendly</div>
+                            <div class="cart-item-color">Цвет <img src="./img/Ellipse 4.png" alt="Color"></div>
+                            <div class="cart-item-size">Размер <span>XS</span></div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" onclick="changeQuantity(2, -1)">-</button>
+                            <span class="quantity-value">5</span>
+                            <button class="quantity-btn plus" onclick="changeQuantity(2, 1)">+</button>
+                            <div class="min-quantity">min</div>
+                        </div>
+                        <div class="cart-item-price">$76.43</div>
+                        <button class="remove-btn"><img src="./img/close.png" alt="Удалить"></button>
+                    </div>
+                    
+                    <div class="item-separator"></div>
+                    
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="./img/klipartz 3.png" alt="EL003 Eleven Checkpoint-Friendly">
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">EL003 Eleven Checkpoint-Friendly</div>
+                            <div class="cart-item-color">Цвет <img src="./img/Ellipse 4.png" alt="Color"></div>
+                            <div class="cart-item-size">Размер <span>XS</span></div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" onclick="changeQuantity(3, -1)">-</button>
+                            <span class="quantity-value">5</span>
+                            <button class="quantity-btn plus" onclick="changeQuantity(3, 1)">+</button>
+                            <div class="min-quantity">min</div>
+                        </div>
+                        <div class="cart-item-price">$76.43</div>
+                        <button class="remove-btn"><img src="./img/close.png" alt="Удалить"></button>
+                    </div>
+                    
+                    <div class="item-separator"></div>
+                    
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="./img/klipartz 3.png" alt="Rousep XS">
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">Rousep XS</div>
+                            <div class="cart-item-color">Цвет <img src="./img/Ellipse 4.png" alt="Color"></div>
+                            <div class="cart-item-size">Размер <span>XS</span></div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" onclick="changeQuantity(4, -1)">-</button>
+                            <span class="quantity-value">5</span>
+                            <button class="quantity-btn plus" onclick="changeQuantity(4, 1)">+</button>
+                            <div class="min-quantity">min</div>
+                        </div>
+                        <div class="cart-item-price">$76.43</div>
+                        <button class="remove-btn"><img src="./img/close.png" alt="Удалить"></button>
+                    </div>
+                </div>
+                
+                <div class="cart-footer">
+                    <div class="order-number">Заказ № 110293</div>
+                    <div class="cart-total">Всего: $305.72</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

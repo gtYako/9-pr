@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Багманова</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <button class="open-modal-btn">Рассчитать стоимость ремонта</button>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h1>РАССЧИТАЙТЕ СТОИМОСТЬ РЕМОНТА</h1>
+            </div>
+
+            <form id="repairCalculator">
+                <div class="form-group">
+                    <h3>Вид ремонта:</h3>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="repair-type" value="cosmetic" checked> Косметический
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="repair-type" value="capital"> Капитальный
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="repair-type" value="turnkey"> Под ключ
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="repair-type" value="designer"> Дизайнерский
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>Тип вашей недвижимости:</h3>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="property-type" value="new" checked> Новостройка
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="property-type" value="secondary"> Вторичное жилье
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>Количество комнат:</h3>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="rooms" value="1" checked> 1
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="rooms" value="2"> 2
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="rooms" value="3"> 3
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="rooms" value="4"> 4
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>Площадь, м²:</h3>
+                    <div class="slider-container">
+                        <div class="slider-track"></div>
+                        <div class="slider-fill" id="sliderFill"></div>
+                        <input 
+                            type="range" 
+                            class="slider-input" 
+                            id="areaSlider" 
+                            name="area" 
+                            min="10" 
+                            max="200" 
+                            value="35"
+                            step="1"
+                        >
+                    </div>
+                    <div class="slider-value" id="areaValue">35 м²</div>
+                </div>
+
+                <div class="result-section">
+                    <div class="result-columns">
+                        <div class="result-column">
+                            <div class="result-label">Срок ремонта:</div>
+                            <div class="result-value" id="repair-time">до 34 дней</div>
+                        </div>
+                        <div class="result-column">
+                            <div class="result-label">Скидка составит:</div>
+                            <div class="result-value" id="discount">23 765 руб</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>Введите номер телефона</h3>
+                    <div class="phone-section">
+                        <div class="phone-input">
+                            <span class="phone-prefix">+7</span>
+                            <input type="tel" class="phone-field" name="phone" placeholder="" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Заказать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="main.js"></script>
+</body>
+</html>

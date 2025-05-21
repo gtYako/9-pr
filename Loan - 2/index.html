@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loan Calculator</title>
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <main class="calculator" role="main" aria-label="Кредитный калькулятор">
+    <h1>Кредитный калькулятор</h1>
+    <form id="loanForm" novalidate>
+      <label for="amount">Сумма кредита (₽)</label>
+      <input
+        type="number"
+        id="amount"
+        name="amount"
+        min="10000"
+        max="10000000"
+        step="1000"
+        placeholder="Введите сумму от 10,000 до 10,000,000"
+        required
+        aria-describedby="amountHelp"
+      />
+      <small id="amountHelp">Минимум 10,000 ₽, максимум 10,000,000 ₽</small>
+
+      <label for="interestRate">Годовая ставка (%)</label>
+      <div class="slider-container">
+        <div class="slider-track"></div>
+        <div class="slider-fill" id="sliderFill"></div>
+        <input
+          type="range"
+          id="interestRate"
+          name="interestRate"
+          min="1"
+          max="30"
+          step="0.1"
+          value="10"
+          aria-valuemin="1"
+          aria-valuemax="30"
+          aria-valuenow="10"
+          aria-describedby="interestHelp"
+          oninput="updateInterestLabel(this.value)"
+          required
+        />
+        <div id="interestValue" aria-live="polite" style="margin-top: .3rem; font-weight: 600; color: var(--accent);">10.0%</div>
+        <small id="interestHelp">Выберите годовую процентную ставку</small>
+      </div>
+
+      <label for="term">Срок кредита (месяцы)</label>
+      <input
+        type="number"
+        id="term"
+        name="term"
+        min="1"
+        max="360"
+        step="1"
+        placeholder="Введите срок от 1 до 360 месяцев"
+        required
+        aria-describedby="termHelp"
+      />
+      <small id="termHelp">Минимум 1 месяц, максимум 360 месяцев</small>
+
+      <div class="error" id="errorMessage" role="alert" aria-live="assertive" style="display:none;"></div>
+
+      <button type="submit" aria-label="Рассчитать платежи по кредиту">Рассчитать</button>
+    </form>
+
+    <section aria-live="polite" aria-atomic="true" class="results" id="results" hidden>
+      <div class="result-item"><span>Общий ежемесячный платеж:</span> <span id="monthlyPayment">0 ₽</span></div>
+      <div class="result-item"><span>Общая сумма выплат:</span> <span id="totalPayment">0 ₽</span></div>
+      <div class="result-item"><span>Общие проценты:</span> <span id="totalInterest">0 ₽</span></div>
+    </section>
+  </main>
+<script src="./main.js"></script>
+</body>
+</html>
